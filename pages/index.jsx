@@ -1,9 +1,11 @@
 import React from "react";
-
+import LinksContainer from "../components/LinksContainer";
 const Home = () => {
   return (
-    <div>
-      <h1>asdasd</h1>
+    <div className="Home">
+      <div>
+        <LinksContainer />
+      </div>
     </div>
   );
 };

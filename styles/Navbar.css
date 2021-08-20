@@ -1,0 +1,15 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0px 15px;
+  background: var(--main-color);
+  color: white;
+}
+.userImage {
+  width: 45px;
+  height: 45px;
+  background: #ffff;
+  border-radius: 50%;
+}

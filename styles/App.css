@@ -1,0 +1,11 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+:root {
+  --main-color: #202020;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(224, 223, 223);
+}
