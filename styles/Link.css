@@ -1,0 +1,23 @@
+.Link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 5px;
+}
+.linkImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  background: gray;
+  border-radius: 5px;
+}
+.linkData {
+  border-radius: 5px;
+}
+.linkData p {
+  margin: 5px 2px;
+}
