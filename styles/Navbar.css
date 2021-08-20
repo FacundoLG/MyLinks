@@ -1,15 +1,41 @@
 .Navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  padding: 0px 15px;
+  position: absolute;
+  width: 100%;
+  padding: 0 0 5px 0;
   background: var(--main-color);
-  color: white;
+  overflow: hidden;
+  height: 41vh;
+  transition: 200ms;
 }
-.userImage {
-  width: 45px;
-  height: 45px;
-  background: #ffff;
-  border-radius: 50%;
+.container {
+  display: grid;
+  grid-template-areas:
+    "six one four two two"
+    "six one four two two"
+    "three three four two two"
+    "three three five five five";
+  gap: 2px;
+  margin: 0 5px;
+  grid-auto-rows: 10vh;
+  grid-auto-columns: 1fr;
+}
+.pageLink {
+  display: flex;
+  background: rgba(59, 59, 59, 0.615);
+  filter: grayscale(20%);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 100;
+}
+.pageLink:hover {
+  cursor: pointer;
+  filter: grayscale(0%);
+  transition: 200ms ease;
+}
+.hiden {
+  padding: 0px 0px 0px 0px;
+  height: 0vh;
+  transition: 200ms;
 }

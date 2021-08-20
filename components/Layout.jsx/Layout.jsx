@@ -1,11 +1,20 @@
 import React from "react";
-import Navbar from "../Navbar";
-
+import Header from "../Header";
 const Layout = ({ children }) => {
   return (
     <div>
-      <Navbar />
-      {children}
+      <Header />
+      <div
+        style={{
+          width: "90vw",
+          margin: "0 auto",
+          height: "88vh",
+          paddingTop: "2vh",
+          overflowX: "auto",
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 };

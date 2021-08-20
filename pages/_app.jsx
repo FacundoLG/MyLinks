@@ -1,6 +1,6 @@
 import Layout from "../components/Layout.jsx/Layout";
+import "../styles/Header.css";
 import "../styles/Navbar.css";
-import "../styles/LinksContainer.css";
 import "../styles/Link.css";
 import "../styles/Home.css";
 import "../styles/App.css";
