@@ -3,18 +3,23 @@ import Navbar from "./Navbar";
 import { BsSearch } from "react-icons/bs";
 const Header = () => {
   const [navStatus, setNavStaus] = useState(false);
-  document.addEventListener("click", (event) => {
-    return (clickId = event.target.id);
-  });
-  const HandleNavBar = () => {
-    if (navStatus === false) {
+  useEffect(() => {
+    document.addEventListener("click", (event) => {
+      var id = event.target.id;
+      HandleNavBar(id);
+    });
+  }, []);
+  const HandleNavBar = (clickId) => {
+    console.log(clickId);
+    if (
+      (navStatus === false && clickId === "inputGroup3") ||
+      clickId === "inputGroup2" ||
+      clickId === "inputGroup1"
+    ) {
       setNavStaus(true);
     } else {
-      if (clickId === "inputGroup3" || "inputGroup2" || "inputGroup1") {
-        setNavStaus(true);
-      } else {
-        setNavStaus(false);
-      }
+      console.log("close");
+      setNavStaus(false);
     }
   };
 
@@ -25,7 +30,6 @@ const Header = () => {
         <div
           id="inputGroup3"
           className={navStatus ? "navbarButton expanded" : "navbarButton"}
-          onClick={HandleNavBar}
         >
           <BsSearch className="searchIcon" id="inputGroup1" />
           <input

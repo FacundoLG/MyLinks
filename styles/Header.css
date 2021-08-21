@@ -26,6 +26,8 @@
   overflow: hidden;
   transition: 200ms;
   width: 20px;
+  max-width: 300px;
+  transition: 200ms;
 }
 .searchIcon {
   width: 20px;
@@ -42,13 +44,16 @@
   margin: 0 0 0 10px;
   display: none;
   width: 0px;
+  transition: 200ms;
 }
 .display {
   display: flex;
-  width: 80%;
+  width: 90%;
+  transition: 200ms;
 }
 .expanded {
-  width: 40vw;
+  width: 70vw;
+  max-width: 150px;
 }
 .navbarButton:hover .searchIcon {
   cursor: pointer;
