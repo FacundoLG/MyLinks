@@ -46,6 +46,7 @@ const Navbar = ({ state }) => {
       <div className="container">
         {HomeNavbar.map((page) => (
           <div
+            key={page.name}
             className="pageLink"
             style={{ backgroundColor: "#" + page.color, gridArea: page.area }}
           >

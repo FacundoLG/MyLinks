@@ -7,14 +7,11 @@ import "../styles/Link.css";
 import "../styles/LinksManager.css";
 
 import "../styles/Home.css";
+import "../styles/AuthForm.css";
 
 import "../styles/App.css";
 function MyApp({ Component, pageProps }) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
+  return <Component {...pageProps} />;
 }
 
 // Only uncomment this method if you have blocking data requirements for
