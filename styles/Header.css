@@ -17,14 +17,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 60%;
+  border-radius: 50px;
   background: none;
   border: solid white 1px;
   padding: 10px;
   color: white;
   font-size: 20px;
+  overflow: hidden;
+  transition: 200ms;
+  width: 20px;
 }
-.navbarButton:hover {
+.searchIcon {
+  width: 20px;
+  margin: 0 0 0 0;
+}
+.searchInput {
+  background: none;
+  border: none;
+  border-bottom: solid white 1px;
+  color: white;
+  outline: none;
+  font-size: 15px;
+  font-weight: 100;
+  margin: 0 0 0 10px;
+  display: none;
+  width: 0px;
+}
+.display {
+  display: flex;
+  width: 80%;
+}
+.expanded {
+  width: 40vw;
+}
+.navbarButton:hover .searchIcon {
   cursor: pointer;
   animation: shake 200ms 4;
   transition: 200ms;

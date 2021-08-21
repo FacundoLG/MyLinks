@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
         style={{
           width: "90vw",
           margin: "0 auto",
-          height: "90vh",
+          height: "86vh",
           padding: "2vh 10px",
           overflowX: "auto",
         }}

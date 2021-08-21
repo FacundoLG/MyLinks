@@ -6,6 +6,7 @@
   overflow: hidden;
   height: 41vh;
   transition: 200ms;
+  border-bottom: 1px white solid;
 }
 .container {
   display: grid;

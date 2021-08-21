@@ -1,23 +1,20 @@
 .Link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 5px;
-  margin: 5px;
-}
-.linkImage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 130px;
-  height: 130px;
-  background: gray;
-  border-radius: 5px;
+  display: inline-block;
+  border-radius: 100px;
+  padding: 5px 8px;
+  background: var(--main-color);
+  margin: 3px;
 }
 .linkData {
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  color: white;
+  margin: auto;
+}
+.dot {
+  font-size: 9px;
+  margin: 0px 5px 0 0;
 }
 .linkData p {
-  margin: 5px 2px;
+  margin: 0px 0px;
 }

@@ -1,0 +1,17 @@
+.LinksManager {
+  color: white;
+  height: 200px;
+  background: var(--usefull-color4);
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.linksContainer {
+  width: 100%;
+  border-top: solid rgba(255, 255, 255, 0.629) 1px;
+  padding-top: 5px;
+}
+.linksTitle {
+  font-size: 20px;
+  margin: 5px 3px 0px 3px;
+}

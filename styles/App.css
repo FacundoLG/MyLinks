@@ -3,9 +3,35 @@
 }
 :root {
   --main-color: #202020;
+  --usefull-color1: #bf1363;
+  --usefull-color2: #ff4848;
+  --usefull-color3: #ff4c29;
+  --usefull-color4: #ff2626;
+  --usefull-color5: #64c9cf;
+  --usefull-color6: #d89216;
+  --usefull-color7: #bf1363;
 }
 body {
   margin: 0;
   padding: 0;
   background: rgb(224, 223, 223);
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color);
 }
