@@ -38,6 +38,9 @@
   padding: 5px;
   margin-bottom: 50px;
 }
+.AuthForm > label {
+  font-size: 15px;
+}
 .AuthForm input {
   height: 25px;
   margin: 5px 0px;
