@@ -1,19 +1,19 @@
 import React from "react";
 import Link from "./Link";
-const LinksManager = () => {
+
+const LinksManager = ({ length }) => {
+  let cantidadDeLinks = [1, 2, 3];
+  for (var i = 0; i < length; i++) {
+    cantidadDeLinks.push(i);
+    i++;
+  }
   return (
     <div className="LinksManager">
       <p className="linksTitle">Social</p>
       <div className="linksContainer">
-        <Link />
-        <Link />
-        <Link />
-        <Link />
-        <Link />
-        <Link />
-        <Link />
-        <Link />
-        <Link />
+        {cantidadDeLinks.map((dato, index) => (
+          <Link key={index + dato} />
+        ))}
         <Link />
       </div>
     </div>

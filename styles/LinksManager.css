@@ -1,10 +1,10 @@
 .LinksManager {
   color: white;
-  height: 200px;
   background: var(--usefull-color4);
   border-radius: 5px;
+  margin: 5px;
   padding: 5px;
-  margin-bottom: 5px;
+  background-clip: padding-box;
 }
 .linksContainer {
   width: 100%;
