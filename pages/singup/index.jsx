@@ -25,35 +25,35 @@ const SingUp = () => {
       <div className="AuthContainer">
         <p className="title">Linking</p>
         <div className="AuthForm">
-          <label for="fname">Username</label>
+          <label>Username</label>
           <input
             type="text"
             onChange={(e) => {
               setUsername(e.target.value);
             }}
           />
-          <label for="fname">Mail</label>
+          <label>Mail</label>
           <input
             type="text"
             onChange={(e) => {
               setUserEmail(e.target.value);
             }}
           />
-          <label for="fname">Password</label>
+          <label>Password</label>
           <input
             type="password"
             onChange={(e) => {
               setUserPassword(e.target.value);
             }}
           />
-          <label for="fname">ConfirmPassword</label>
+          <label>ConfirmPassword</label>
           <input
             type="password"
             onChange={(e) => {
               setUserConfirmPassword(e.target.value);
             }}
           />
-          <button onClick={RegistUser}>Login</button>
+          <button onClick={RegistUser}>Register</button>
           <p className="error">Error</p>
         </div>
         <i>By Facundo Gimenez</i>
