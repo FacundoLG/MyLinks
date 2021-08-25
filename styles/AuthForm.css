@@ -56,6 +56,7 @@
   color: white;
   padding: 8px 0px;
   border-radius: 5px;
+  margin: 8px 0 0 0;
 }
 .AuthForm button:hover {
   cursor: pointer;

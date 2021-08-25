@@ -11,18 +11,21 @@ export default async function Login(req = NextApiRequest, res = NextApiResponse)
                         query: 'SELECT * FROM users WHERE username = ?',
                         values: [username]
                     })
-                  if(results[0]){
-                    bcrypt.compare(password,results[0].password,(err,same) => {
-                        if(err){ res.status(500).send({error: "err"})}
-                        if(same){
-                            res.status(200).send({
-                                message: "done",
-                                results
-                            })
-                        }else{
-                            res.status(400).send({err: "Wrong Conbination"})
-                        }
-                    })
+                    if(results[0]){
+                        bcrypt.compare(password,results[0].password,(err,same) => {
+                            if(err){ res.status(500).send({error: "err"})}
+                            if(same){
+                                res.status(200).send({
+                                    message: "done",
+                                    results
+                                })
+                            }else{
+                                res.status(400).send({error: "Wrong Conbination"})
+                            }
+                        })
+                  } else {
+                    res.status(400).send({error: "User do not exist"})
+
                   }
                 } catch(err) {                    
                 res.status(400).send({error:"wrong password"})

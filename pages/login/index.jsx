@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
+
 const Login = () => {
   const [logUserName, setLogUsername] = useState("");
   const [logUserEmail, setLogUserEmail] = useState("");
@@ -17,7 +21,26 @@ const Login = () => {
       }),
     })
       .then((data) => data.json())
-      .then(console.log);
+      .then((data) => {
+        console.log(data);
+        if (data.results) {
+          return data.results;
+        }
+      })
+      .then((userResult) => {
+        console.log(userResult);
+        if (userResult[0]) {
+          const result = userResult[0];
+          cookies.set("id", result.id, { path: "/" });
+          cookies.set("username", result.username, { path: "/" });
+          cookies.set("password", result.password, { path: "/" });
+          window.location.href = "/home";
+          console.log("Loged");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div className="Auth">

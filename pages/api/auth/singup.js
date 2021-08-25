@@ -12,7 +12,6 @@ export default async function SingUp(req = NextApiRequest, res = NextApiResponse
             try {
                     await bycrypt.hash(password,rounds,(err,result) => {
                         if(err){ res.status(500).send({error: "err"})}
-                        
                         const results =  excuteQuery({
                             query: 'INSERT INTO users (username,email,password) VALUES (?,?,?)',
                             values: [username,email,result]
@@ -24,12 +23,11 @@ export default async function SingUp(req = NextApiRequest, res = NextApiResponse
                     })
                 } catch(err) {
                 res.status(500).send({error:"err"})
-                    
                 }          
+            
             } else {
             res.status(400).send({error:"Passwords do not match"})
             }
-
         }  else {
             res.status(400).send({error:"bad request"})
         } 
