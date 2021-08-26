@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsPlus } from "react-icons/bs";
 const Header = () => {
   const [navStatus, setNavStaus] = useState(false);
   useEffect(() => {
@@ -27,16 +27,21 @@ const Header = () => {
     <>
       <div className="Header">
         <h2>Linking</h2>
-        <div
-          id="inputGroup3"
-          className={navStatus ? "navbarButton expanded" : "navbarButton"}
-        >
-          <BsSearch className="searchIcon" id="inputGroup1" />
-          <input
-            className={navStatus ? "searchInput display" : "searchInput"}
-            type="text"
-            id="inputGroup2"
-          />
+        <div className="iconsContainer">
+          <div className="plusIconContainer">
+            <BsPlus />
+          </div>
+          <div
+            id="inputGroup3"
+            className={navStatus ? "navbarButton expanded" : "navbarButton"}
+          >
+            <BsSearch id="inputGroup1" />
+            <input
+              className={navStatus ? "searchInput display" : "searchInput"}
+              type="text"
+              id="inputGroup2"
+            />
+          </div>
         </div>
         <div className="userImage"></div>
       </div>

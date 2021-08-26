@@ -8,6 +8,7 @@ import "../styles/LinksManager.css";
 
 import "../styles/Home.css";
 import "../styles/AuthForm.css";
+import "../styles/NewGroup.css";
 
 import "../styles/App.css";
 function MyApp({ Component, pageProps }) {

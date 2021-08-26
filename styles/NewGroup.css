@@ -1,0 +1,28 @@
+.newGroup {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 5px;
+  background: var(--usefull-color1);
+}
+.newGroupInput {
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  color: white;
+  outline: none;
+  border-radius: 5px;
+}
+.colorPicker {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+  justify-content: stretch;
+  height: 50px;
+  gap: 5px;
+  margin-top: 12px;
+}
+.color {
+  border: 1px white solid;
+  border-radius: 5px;
+}

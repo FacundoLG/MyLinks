@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "./Link";
+let colors = [1, 2, 3, 4, 5, 6];
 
-const LinksManager = ({ length }) => {
+colors = colors.map((color) => {
+  return (
+    <div
+      className="color"
+      style={{ backgroundColor: `var(--usefull-color${color})` }}
+    ></div>
+  );
+});
+const LinksManager = ({ length, title, index }) => {
+  const [titleValue, setTitleValue] = useState(title);
+  let id = `${index}_${title}`;
+  useEffect(() => {
+    document.getElementById(id).value = titleValue;
+  }, [titleValue]);
   let cantidadDeLinks = [1, 2, 3];
   for (var i = 0; i < length; i++) {
     cantidadDeLinks.push(i);
@@ -9,7 +23,14 @@ const LinksManager = ({ length }) => {
   }
   return (
     <div className="LinksManager">
-      <p className="linksTitle">Social</p>
+      <input
+        id={id}
+        type="text"
+        onChange={(e) => {
+          setTitleValue(e.target.value);
+        }}
+        className="linksTitle"
+      />
       <div className="linksContainer">
         {cantidadDeLinks.map((dato, index) => (
           <Link key={index + dato} />

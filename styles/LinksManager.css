@@ -12,6 +12,12 @@
   padding-top: 5px;
 }
 .linksTitle {
+  width: 95%;
   font-size: 20px;
+  font-weight: 300;
+  border: none;
   margin: 5px 3px 0px 3px;
+  background: transparent;
+  color: white;
+  outline: none;
 }

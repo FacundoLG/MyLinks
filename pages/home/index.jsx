@@ -19,12 +19,12 @@ const Home = () => {
   return (
     <Layout>
       <Masonry breakpointCols={breakpointColumnsObj} className="Home">
-        <LinksManager length="20" />
-        <LinksManager length="10" />
-        <LinksManager length="20" />
-        <LinksManager length="1" />
-        <LinksManager length="20" />
-        <LinksManager length="0" />
+        <LinksManager length="20" title="Social" index="1" />
+        <LinksManager length="10" title="Social" index="2" />
+        <LinksManager length="20" title="Social" index="3" />
+        <LinksManager length="1" title="Social" index="4" />
+        <LinksManager length="20" title="Social" index="5" />
+        <LinksManager length="0" title="Social" index="6" />
       </Masonry>
       {/* <div className="Home">
         <LinksManager length="20" />
