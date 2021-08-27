@@ -10,9 +10,11 @@ colors = colors.map((color) => {
     ></div>
   );
 });
+
 const LinksManager = ({ length, title, index }) => {
   const [titleValue, setTitleValue] = useState(title);
   let id = `${index}_${title}`;
+
   useEffect(() => {
     document.getElementById(id).value = titleValue;
   }, [titleValue]);
@@ -32,8 +34,8 @@ const LinksManager = ({ length, title, index }) => {
         className="linksTitle"
       />
       <div className="linksContainer">
-        {cantidadDeLinks.map((dato, index) => (
-          <Link key={index + dato} />
+        {cantidadDeLinks.map((dato, i) => (
+          <Link key={index + "_" + dato + i} />
         ))}
         <Link />
       </div>

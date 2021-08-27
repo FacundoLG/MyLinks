@@ -1,4 +1,4 @@
-import Layout from "../components/Layout.jsx/Layout";
+import ProtectedRoutes from "../components/ProtectedRoutes/ProtectedRoutes";
 
 import "../styles/Header.css";
 import "../styles/Navbar.css";
@@ -11,8 +11,13 @@ import "../styles/AuthForm.css";
 import "../styles/NewGroup.css";
 
 import "../styles/App.css";
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+
+function MyApp({ Component, pageProps, router }) {
+  return (
+    <ProtectedRoutes router={router}>
+      <Component {...pageProps} />;
+    </ProtectedRoutes>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for

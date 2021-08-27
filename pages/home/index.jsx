@@ -10,12 +10,10 @@ const breakpointColumnsObj = {
   default: 4,
   1100: 3,
   700: 2,
-  500: 1,
+  350: 1,
 };
 
-const Home = () => {
-  console.log(cookies.getAll());
-
+const Home = ({ children }) => {
   return (
     <Layout>
       <Masonry breakpointCols={breakpointColumnsObj} className="Home">
