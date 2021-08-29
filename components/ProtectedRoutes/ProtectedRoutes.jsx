@@ -10,7 +10,7 @@ const ProtectedRoutes = ({ router, children }) => {
     password: cookies.get("password"),
   };
 
-  let freeRoutes = ["/login", "singuo"];
+  let freeRoutes = ["/login", "/singup"];
   let isProtected = freeRoutes.indexOf(router.pathname) === -1;
   let isAuth = typeof info.password === "string";
 

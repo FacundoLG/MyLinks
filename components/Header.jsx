@@ -8,9 +8,11 @@ const Header = () => {
       var id = event.target.id;
       HandleNavBar(id);
     });
+    return () => {
+      document.removeEventListener("click", () => {});
+    };
   }, []);
   const HandleNavBar = (clickId) => {
-    console.log(clickId);
     if (
       (navStatus === false && clickId === "inputGroup3") ||
       clickId === "inputGroup2" ||
@@ -18,7 +20,6 @@ const Header = () => {
     ) {
       setNavStaus(true);
     } else {
-      console.log("close");
       setNavStaus(false);
     }
   };
