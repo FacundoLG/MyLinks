@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Link from "./Link";
 
-import { BiColorFill } from "react-icons/bi";
+import { BiColorFill, BiPencil } from "react-icons/bi";
 
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 let colors = [1, 5, 3, 4, 6, 2];
-
-colors = colors.map((color) => {
-  return (
-    <div
-      className="color"
-      style={{ backgroundColor: `var(--usefull-color${color})` }}
-    ></div>
-  );
-});
 
 const LinksManager = ({ index, data }) => {
   const [colorPicker, setColorPicker] = useState(false);
@@ -61,8 +52,19 @@ const LinksManager = ({ index, data }) => {
           }}
         />
         <div className={colorPicker ? "colorPicker" : "colorPicker hide"}>
-          {colors}
+          {colors.map((color) => {
+            return (
+              <div
+                onClick={() => {
+                  setColorPicker(false);
+                }}
+                className="color"
+                style={{ backgroundColor: `var(--usefull-color${color})` }}
+              ></div>
+            );
+          })}
         </div>
+        <BiPencil />
       </div>
     </>
   );
