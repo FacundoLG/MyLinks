@@ -6,7 +6,7 @@ export default async function links(req = NextApiRequest,res = NextApiResponse) 
     if(!password) res.status(401).json({error: "You are not authorized"})
     try {
         const result = await excuteQuery({
-            query: ' SELECT links.name as GrupName, links.id as id FROM `links` WHERE links.user_id= ? AND links.group_id = ?;',
+            query: ' SELECT links.name as LinkName, links.id as id FROM `links` WHERE links.user_id= ? AND links.group_id = ?;',
             values: [userId,groupId]
         })
         res.status(200).send({

@@ -15,6 +15,7 @@ const breakpointColumnsObj = {
 
 const Home = () => {
   const [group, setGroup] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:3000/api/groups", {
       method: "POST",
@@ -32,7 +33,7 @@ const Home = () => {
         return setGroup(data);
       });
   }, []);
-  console.log(group);
+
   return (
     <Layout>
       <Masonry breakpointCols={breakpointColumnsObj} className="Home">

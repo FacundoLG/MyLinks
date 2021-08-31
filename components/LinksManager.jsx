@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Link from "./Link";
-let colors = [1, 2, 3, 4, 5, 6];
+
+import { BiColorFill } from "react-icons/bi";
+
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+
+let colors = [1, 5, 3, 4, 6, 2];
 
 colors = colors.map((color) => {
   return (
@@ -12,29 +18,53 @@ colors = colors.map((color) => {
 });
 
 const LinksManager = ({ index, data }) => {
+  const [colorPicker, setColorPicker] = useState(false);
   const [titleValue, setTitleValue] = useState("");
-  let id = `${index}_${data.GrupName}`;
+  const [links, setLinks] = useState([]);
 
   useEffect(() => {
     setTitleValue(data.GrupName);
-    document.getElementById(id).value = titleValue;
-  }, [titleValue]);
+    fetch("http://localhost:3000/api/links", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId: cookies.get("id"),
+        groupId: data.id,
+        password: cookies.get("password"),
+      }),
+    })
+      .then((data) => data.json())
+      .then((data) => {
+        return setLinks(data.result);
+      });
+  }, []);
 
   return (
-    <div className="LinksManager">
-      <input
-        id={id}
-        type="text"
-        onChange={(e) => {
-          setTitleValue(e.target.value);
-        }}
-        className="linksTitle"
-      />
+    <>
+      <div className="LinksManager">
+        <p className="linksTitle">{titleValue}</p>
 
-      <div className="linksContainer">
-        <Link data={""} />
+        <div className="linksContainer">
+          {links?.map((data) => (
+            <Link data={data} />
+          ))}
+        </div>
       </div>
-    </div>
+      <div className="tools">
+        <BiColorFill
+          className="toolIcon"
+          onClick={() => {
+            setColorPicker(!colorPicker);
+          }}
+        />
+        <div className={colorPicker ? "colorPicker" : "colorPicker hide"}>
+          {colors}
+        </div>
+      </div>
+    </>
   );
 };
 
