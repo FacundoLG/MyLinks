@@ -11,18 +11,15 @@ colors = colors.map((color) => {
   );
 });
 
-const LinksManager = ({ length, title, index }) => {
-  const [titleValue, setTitleValue] = useState(title);
-  let id = `${index}_${title}`;
+const LinksManager = ({ index, data }) => {
+  const [titleValue, setTitleValue] = useState("");
+  let id = `${index}_${data.GrupName}`;
 
   useEffect(() => {
+    setTitleValue(data.GrupName);
     document.getElementById(id).value = titleValue;
   }, [titleValue]);
-  let cantidadDeLinks = [1, 2, 3];
-  for (var i = 0; i < length; i++) {
-    cantidadDeLinks.push(i);
-    i++;
-  }
+
   return (
     <div className="LinksManager">
       <input
@@ -33,11 +30,9 @@ const LinksManager = ({ length, title, index }) => {
         }}
         className="linksTitle"
       />
+
       <div className="linksContainer">
-        {cantidadDeLinks.map((dato, i) => (
-          <Link key={index + "_" + dato + i} />
-        ))}
-        <Link />
+        <Link data={""} />
       </div>
     </div>
   );

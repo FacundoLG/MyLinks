@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout.jsx/Layout";
 import LinksManager from "../../components/LinksManager";
 import Cookies from "universal-cookie";
@@ -13,25 +13,37 @@ const breakpointColumnsObj = {
   350: 1,
 };
 
-const Home = ({ children }) => {
+const Home = () => {
+  const [group, setGroup] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/api/groups", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userId: cookies.get("id"),
+        password: cookies.get("password"),
+      }),
+    })
+      .then((data) => data.json())
+      .then((data) => {
+        return setGroup(data);
+      });
+  }, []);
+  console.log(group);
   return (
     <Layout>
       <Masonry breakpointCols={breakpointColumnsObj} className="Home">
-        <LinksManager length="20" title="Social" index="1" />
-        <LinksManager length="10" title="Social" index="2" />
-        <LinksManager length="20" title="Social" index="3" />
-        <LinksManager length="1" title="Social" index="4" />
-        <LinksManager length="20" title="Social" index="5" />
-        <LinksManager length="0" title="Social" index="6" />
+        {group?.result?.map((data) => (
+          <LinksManager
+            key={data.id + data.GrupName}
+            index={data.id + data.GrupName}
+            data={data}
+          />
+        ))}
       </Masonry>
-      {/* <div className="Home">
-        <LinksManager length="20" />
-        <LinksManager length="10" />
-        <LinksManager length="20" />
-        <LinksManager length="1" />
-        <LinksManager length="20" />
-        <LinksManager length="0" />
-      </div> */}
     </Layout>
   );
 };

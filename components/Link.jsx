@@ -1,11 +1,17 @@
 import React from "react";
 import { BsCircleFill } from "react-icons/bs";
-const Link = () => {
+const Link = ({ data }) => {
   return (
     <div className="Link">
       <div className="linkData">
         <BsCircleFill className="dot" />
-        <p>Facebook</p>
+        {data ? (
+          <a href={data?.link} target="_blank">
+            {data?.name}
+          </a>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
