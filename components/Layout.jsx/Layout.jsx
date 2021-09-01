@@ -1,9 +1,11 @@
 import React from "react";
+import GroupEditor from "../GroupEditor";
 import Header from "../Header";
 
 const Layout = ({ children }) => {
   return (
     <div>
+      <GroupEditor />
       <Header />
       <div
         style={{

@@ -42,7 +42,6 @@ const LinksManager = ({ index, data }) => {
           {links?.map((data) => (
             <Link data={data} />
           ))}
-          <BiPlusCircle className="addLinkButton" />
         </div>
       </div>
       <div className="tools">
@@ -66,6 +65,7 @@ const LinksManager = ({ index, data }) => {
           })}
         </div>
         <BiPencil />
+        <BiPlusCircle />
       </div>
     </>
   );

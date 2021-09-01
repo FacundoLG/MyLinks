@@ -17,17 +17,7 @@
   background: #ffff;
   border-radius: 50%;
 }
-.plusIconContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  border: solid white 1px;
-  border-radius: 50px;
-  font-size: 20px;
-  padding: 10px;
-  margin-right: 10px;
-}
+
 .navbarButton {
   display: flex;
   justify-content: center;
