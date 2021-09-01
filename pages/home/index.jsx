@@ -3,7 +3,7 @@ import Layout from "../../components/Layout.jsx/Layout";
 import LinksManager from "../../components/LinksManager";
 import Cookies from "universal-cookie";
 import Masonry from "react-masonry-css";
-
+import { BsPlusCircle } from "react-icons/bs";
 const cookies = new Cookies();
 
 const breakpointColumnsObj = {
@@ -44,6 +44,9 @@ const Home = () => {
             data={data}
           />
         ))}
+        <div className="addGroupButton">
+          <BsPlusCircle />
+        </div>
       </Masonry>
     </Layout>
   );

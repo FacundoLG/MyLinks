@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import {excuteQuery} from "../../lib/db"
+import {excuteQuery} from "../../../lib/db"
 
 export default async function groups(req = NextApiRequest,res = NextApiResponse) {
     const {userId,password} = req.body

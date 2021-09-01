@@ -4,3 +4,18 @@
   display: flex;
   width: 100%;
 }
+.addGroupButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  height: 40px;
+  background: var(--main-color);
+  border-radius: 5px;
+  font-size: 28px;
+  color: white;
+}
+.addGroupButton:hover {
+  opacity: 0.95;
+  cursor: pointer;
+}

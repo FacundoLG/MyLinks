@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
         style={{
           width: "90vw",
           margin: "0 auto",
-          height: "86vh",
+          height: "82vh",
           padding: "2vh 10px",
           overflowX: "auto",
         }}

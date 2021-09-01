@@ -8,8 +8,22 @@
 }
 .linksContainer {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   border-top: solid rgba(255, 255, 255, 0.629) 1px;
   padding-top: 5px;
+}
+.addLinkButton {
+  display: flex;
+  margin: auto 2px;
+  padding: 4px;
+  background: var(--main-color);
+  font-size: 22px;
+  border-radius: 50%;
+}
+.addLinkButton:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }
 .linksTitle {
   width: 95%;

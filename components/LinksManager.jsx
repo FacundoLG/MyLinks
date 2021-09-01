@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "./Link";
 
-import { BiColorFill, BiPencil } from "react-icons/bi";
+import { BiColorFill, BiPencil, BiPlusCircle } from "react-icons/bi";
 
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
@@ -42,6 +42,7 @@ const LinksManager = ({ index, data }) => {
           {links?.map((data) => (
             <Link data={data} />
           ))}
+          <BiPlusCircle className="addLinkButton" />
         </div>
       </div>
       <div className="tools">
