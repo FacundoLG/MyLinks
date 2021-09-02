@@ -7,12 +7,13 @@
   width: 100%;
   height: 100%;
   margin: auto auto;
+  display: none;
 }
 .GroupEditor .container {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background: #000;
+  background: var(--usefull-color2);
   width: 50vw;
   min-width: 300px;
   border-radius: 5px;

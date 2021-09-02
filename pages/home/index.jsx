@@ -5,7 +5,6 @@ import Cookies from "universal-cookie";
 import Masonry from "react-masonry-css";
 import { BsPlusCircle } from "react-icons/bs";
 import useFetch from "../../hooks/useFetch";
-import GroupEditor from "../../components/GroupEditor";
 const cookies = new Cookies();
 
 const breakpointColumnsObj = {
@@ -16,29 +15,39 @@ const breakpointColumnsObj = {
 };
 const Home = () => {
   const [group, setGroup] = useState([]);
+  const [refresh, setRefresh] = useState(0);
   const userData = {
     userId: cookies.get("id"),
-    password: cookies.get("password"),
+    key: cookies.get("password"),
   };
   useEffect(() => {
-    fetch("http://localhost:3000/api/groups", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    })
+    fetch(
+      `http://localhost:3000/api/groups?userid=${userData.userId}&password=${userData.key}`
+    )
       .then((data) => data.json())
       .then((data) => {
+        console.log(data);
         return setGroup(data);
       });
-  }, []);
+  }, [refresh]);
 
   const newGroup = () => {
-    useFetch("http://localhost:3000/api/groups", "POST", {
-      ...userData,
-      create: true,
+    console.log("New");
+    fetch(
+      `http://localhost:3000/api/groups?userid=${userData.userId}&password=${userData.key}`,
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: "name",
+          color: 1,
+        }),
+      }
+    ).then((data) => {
+      return setRefresh(refresh + 1);
     });
   };
   return (
@@ -54,7 +63,7 @@ const Home = () => {
         <div className="addGroupButton">
           <BsPlusCircle
             onClick={() => {
-              newGroup;
+              newGroup();
             }}
           />
         </div>

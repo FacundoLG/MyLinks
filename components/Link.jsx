@@ -1,7 +1,6 @@
 import React from "react";
 import { BsCircleFill } from "react-icons/bs";
 const Link = ({ data }) => {
-  console.log(data);
   return (
     <div className="Link">
       <div className="linkData">
