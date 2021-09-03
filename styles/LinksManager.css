@@ -27,6 +27,8 @@
 }
 
 .tools {
+  position: relative;
+
   background: var(--main-color);
   display: flex;
   align-items: center;

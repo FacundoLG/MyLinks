@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsCloud } from "react-icons/bs";
 const Header = () => {
   const [navStatus, setNavStaus] = useState(false);
   useEffect(() => {
@@ -27,8 +27,9 @@ const Header = () => {
   return (
     <>
       <div className="Header">
-        <h2>Linking</h2>
-        <div className="iconsContainer">
+        <h2 className="long">Linking</h2>
+        <h2 className="short">LinK</h2>
+        <div className="headerChildsContainer">
           <div
             id="inputGroup3"
             className={navStatus ? "navbarButton expanded" : "navbarButton"}
@@ -41,7 +42,10 @@ const Header = () => {
             />
           </div>
         </div>
-        <div className="userImage"></div>
+        <div className="headerChildsContainer">
+          <BsCloud />
+          <div className="userImage"></div>
+        </div>
       </div>
       <Navbar state={navStatus} />
     </>

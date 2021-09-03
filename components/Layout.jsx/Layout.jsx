@@ -4,14 +4,14 @@ import Header from "../Header";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div style={{ height: "90vh" }}>
       <GroupEditor />
       <Header />
       <div
         style={{
           width: "90vw",
           margin: "0 auto",
-          height: "82vh",
+          height: "86vh",
           padding: "2vh 10px",
           overflowX: "auto",
         }}

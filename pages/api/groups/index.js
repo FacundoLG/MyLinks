@@ -8,7 +8,7 @@ export default async function groups(req = NextApiRequest,res = NextApiResponse)
         case "GET":
             try {
                 const result = await excuteQuery({
-                    query: ' SELECT groups.name as GrupName, groups.id as id FROM `groups` WHERE groups.user_id= ?;',
+                    query: ' SELECT groups.name as GrupName, groups.id as id, groups.color FROM `groups` WHERE groups.user_id= ?;',
                     values: [userid]
                 })
                 res.status(200).send({

@@ -42,7 +42,7 @@ const Home = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: "name",
+          name: "Name",
           color: 1,
         }),
       }
@@ -60,12 +60,13 @@ const Home = () => {
             data={data}
           />
         ))}
-        <div className="addGroupButton">
-          <BsPlusCircle
-            onClick={() => {
-              newGroup();
-            }}
-          />
+        <div
+          className="addGroupButton"
+          onClick={() => {
+            newGroup();
+          }}
+        >
+          <BsPlusCircle />
         </div>
       </Masonry>
     </Layout>

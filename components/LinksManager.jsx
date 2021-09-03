@@ -35,7 +35,10 @@ const LinksManager = ({ index, data }) => {
 
   return (
     <>
-      <div className="LinksManager">
+      <div
+        className="LinksManager"
+        style={{ background: `var(--usefull-color${data.color || 2})` }}
+      >
         <p className="linksTitle">{titleValue}</p>
 
         <div className="linksContainer">
