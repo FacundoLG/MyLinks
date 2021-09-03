@@ -58,6 +58,9 @@ const Home = () => {
             key={data.id + data.GrupName}
             index={data.id + data.GrupName}
             data={data}
+            refresh={() => {
+              setRefresh(refresh + 1);
+            }}
           />
         ))}
         <div

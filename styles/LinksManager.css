@@ -28,9 +28,9 @@
 
 .tools {
   position: relative;
-
   background: var(--main-color);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 20px;
   margin: 0 5px 0 5px;
@@ -44,11 +44,20 @@
   padding: 2px;
   border-radius: 50%;
   font-size: 19px;
+  margin: auto 0px;
 }
+
 .toolIcon:hover {
   background: rgba(255, 255, 255, 0.396);
   cursor: pointer;
   transition: 200ms ease;
+}
+.warning:hover {
+  background: var(--usefull-color4);
+}
+.toolsSection {
+  display: flex;
+  align-items: center;
 }
 .colorPicker {
   position: absolute;
@@ -73,6 +82,7 @@
 }
 .color:hover {
   filter: brightness(1.1);
+  cursor: pointer;
 }
 .hide {
   position: absolute;

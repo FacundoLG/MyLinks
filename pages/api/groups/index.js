@@ -32,5 +32,18 @@ export default async function groups(req = NextApiRequest,res = NextApiResponse)
                 console.log(err)
 
             }
+        case "DELETE":
+            try{
+                const result = await excuteQuery({
+                    query: 'DELETE FROM `groups` WHERE id = ? AND user_id = ?',
+                    values: [req.body.groupId,userid]
+                })
+                res.status(200).send({
+                    result,
+                })
+            }catch(err){
+                console.log(err)
+
+            }
     }
 }   
